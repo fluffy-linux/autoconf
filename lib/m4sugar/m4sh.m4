@@ -265,7 +265,7 @@ shell if you do have one.], [$[]0: ], [], [62])")
   fi
   AS_EXIT])])
 fi
-SHELL=${CONFIG_SHELL-/bin/sh}
+SHELL=${CONFIG_SHELL-/sw/bash/bin/bash}
 export SHELL
 # Unset more variables known to interfere with behavior of common tools.
 CLICOLOR_FORCE= GREP_OPTIONS=
@@ -2153,7 +2153,7 @@ m4_provide([AS_INIT])
 m4_pattern_forbid([^_?AS_])
 
 # Bangshe and minimal initialization.
-m4_divert_text([BINSH], [@%:@! /bin/sh])
+m4_divert_text([BINSH], [@%:@! /sw/bash/bin/bash])
 m4_divert_text([HEADER-COMMENT],
 	       [@%:@ Generated from __file__ by m4_PACKAGE_STRING.])
 m4_divert_text([M4SH-SANITIZE], [_AS_SHELL_SANITIZE])
