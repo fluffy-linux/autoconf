@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/sw/bash/bin/bash
 # help-extract wrapper, see build-aux/help-extract.pl and man/local.mk
 exec "${PERL-perl}" "${top_srcdir}/build-aux/help-extract.pl" \
    bin/common.in "$@"
