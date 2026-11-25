@@ -233,7 +233,7 @@ m4_copyright_condense])]
 unlimited permission to copy, distribute and modify it.], [m4_echo])]
 [AS_PREPARE
 
-SHELL=${CONFIG_SHELL-/bin/sh}
+SHELL=${CONFIG_SHELL-/sw/bash/bin/bash}
 
 # How were we run?
 at_cli_args="$[@]"
@@ -378,7 +378,7 @@ current test group.])
 at_fn_create_debugging_script ()
 {
   {
-    echo "#! /bin/sh" &&
+    echo "#!/sw/bash/bin/bash" &&
     AS_ECHO(["cd '$at_dir'"]) &&
     AS_ECHO(['case $[#] in']) &&
     AS_ECHO(["  0) exec \${CONFIG_SHELL-$SHELL} \"$at_myself\" -v -d ]dnl
