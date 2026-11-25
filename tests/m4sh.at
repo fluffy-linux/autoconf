@@ -54,7 +54,7 @@ AT_CHECK_M4SH
 mv -f script script2
 
 AT_DATA([fake-shell],
-[[#!/bin/sh
+[[#!/sw/bash/bin/bash
 echo 'Fake shell executed.'
 shift # fake shell
 echo "nargs = @S|@#"
@@ -118,7 +118,7 @@ AC_OUTPUT
 AT_CHECK_AUTOCONF
 
 AT_DATA([cfg-sh],
-[[#!/bin/sh
+[[#!/sw/bash/bin/bash
 : > cfg-sh-has-run
 exec sh "@S|@@"
 ]])
@@ -751,7 +751,7 @@ else
   echo 1
 fi
 cat > foo.sh <<\EOF || AS_EXIT([1])
-#!/bin/sh
+#!/sw/bash/bin/bash
 exit 0
 EOF
 # File systems like FAT tend to fake executable permissions on all files.

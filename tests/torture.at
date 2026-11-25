@@ -1653,11 +1653,11 @@ AT_CHECK([{ ./configure $configure_options --help=recursive; chmod u+w .; } | gr
 	 0, [ignore], [stderr],
 	 [AT_CHECK([grep 'rerun with a POSIX shell' stderr], [], [ignore])])
 chmod a-w .
-AT_CHECK([{ /bin/sh ./configure $configure_options --help=recursive; chmod u+w .; } | grep " INNERMOST "],
+AT_CHECK([{ /sw/bash/bin/bash ./configure $configure_options --help=recursive; chmod u+w .; } | grep " INNERMOST "],
 	 0, [ignore], [stderr],
 	 [AT_CHECK([grep 'rerun with a POSIX shell' stderr], [], [ignore])])
 chmod a-w .
-AT_CHECK([PATH=.$PATH_SEPARATOR$PATH; export PATH; { /bin/sh configure $configure_options --help=recursive; chmod +w .; } | grep " INNERMOST "],
+AT_CHECK([PATH=.$PATH_SEPARATOR$PATH; export PATH; { /sw/bash/bin/bash configure $configure_options --help=recursive; chmod +w .; } | grep " INNERMOST "],
 	 0, [ignore], [stderr],
 	 [AT_CHECK([grep 'rerun with a POSIX shell' stderr], [], [ignore])])
 chmod a-w .
@@ -1695,13 +1695,13 @@ AT_CHECK([cd builddir && { ../configure $configure_options --help=recursive; chm
 	 0, [ignore], [stderr],
 	 [AT_CHECK([grep 'rerun with a POSIX shell' stderr], [], [ignore])])
 chmod a-w builddir
-AT_CHECK([cd builddir && { /bin/sh ../configure $configure_options --help=recursive; chmod u+w .; } | grep " INNERMOST "],
+AT_CHECK([cd builddir && { /sw/bash/bin/bash ../configure $configure_options --help=recursive; chmod u+w .; } | grep " INNERMOST "],
 	 0, [ignore], [stderr],
 	 [AT_CHECK([grep 'rerun with a POSIX shell' stderr], [], [ignore])])
 chmod a-w builddir
 # Not all shells search $PATH for scripts.
-if (cd builddir && PATH=`pwd`/..$PATH_SEPARATOR$PATH /bin/sh configure $configure_options --help) >/dev/null 2>&1; then
-  AT_CHECK([cd builddir && PATH=`pwd`/..$PATH_SEPARATOR$PATH /bin/sh configure $configure_options --help=recursive | grep " INNERMOST "], 0, [ignore])
+if (cd builddir && PATH=`pwd`/..$PATH_SEPARATOR$PATH /sw/bash/bin/bash configure $configure_options --help) >/dev/null 2>&1; then
+  AT_CHECK([cd builddir && PATH=`pwd`/..$PATH_SEPARATOR$PATH /sw/bash/bin/bash configure $configure_options --help=recursive | grep " INNERMOST "], 0, [ignore])
 fi
 AT_CHECK([PATH=`pwd`$PATH_SEPARATOR$PATH; export PATH; cd builddir && { configure $configure_options --help=recursive; chmod u+w .; } | grep " INNERMOST "],
 	 0, [ignore], [stderr],
