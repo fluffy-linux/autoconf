@@ -639,7 +639,7 @@ m4_define([AT_CHECK_PROGS_PREPARE],
 [mkdir path
 
 cat >path/tool <<\EOF
-#! /bin/sh
+#!/sw/bash/bin/bash
 exit 0
 EOF
 chmod +x path/tool
